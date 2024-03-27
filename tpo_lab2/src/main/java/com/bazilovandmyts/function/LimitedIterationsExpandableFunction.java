@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public abstract class LimitedIterationsExpandableFunction implements SeriesExpandableFunction {
 
-    private static final int DEFAULT_MAX_ITERATIONS = 1000;
+    private static final int DEFAULT_MAX_ITERATIONS = 10000;
 
     protected final int maxIterations;
 

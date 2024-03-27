@@ -58,5 +58,14 @@ public class App {
                 new BigDecimal(20),
                 new BigDecimal("0.1"),
                 new BigDecimal("0.00000000001"));
+        final FunctionsSystem func = new FunctionsSystem();
+        CsvWriter.write(
+                "csv/func.csv",
+                func,
+                new BigDecimal(-2),
+                new BigDecimal(2),
+                new BigDecimal("0.1"),
+                new BigDecimal("0.00000000001")
+        );
     }
 }

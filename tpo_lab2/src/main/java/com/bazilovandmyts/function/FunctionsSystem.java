@@ -3,6 +3,8 @@ package com.bazilovandmyts.function;
 import static java.math.BigDecimal.ZERO;
 import static java.math.MathContext.DECIMAL128;
 import static java.math.RoundingMode.HALF_EVEN;
+import static java.math.RoundingMode.HALF_UP;
+
 import ch.obermuhlner.math.big.BigDecimalMath;
 import com.bazilovandmyts.logariphmic.Ln;
 import com.bazilovandmyts.logariphmic.Log;
@@ -31,7 +33,7 @@ public class FunctionsSystem implements SeriesExpandableFunction {
     }
 
     public BigDecimal calculate(final BigDecimal x, final BigDecimal precision) {
-        final MathContext mc = new MathContext(DECIMAL128.getPrecision(), HALF_EVEN);
+        final MathContext mc = new MathContext(DECIMAL128.getPrecision(), HALF_UP);
         final BigDecimal correctedX = x.remainder(BigDecimalMath.pi(mc).multiply(new BigDecimal(2)));
 
         if (x.compareTo(ZERO) <= 0) {
@@ -40,7 +42,7 @@ public class FunctionsSystem implements SeriesExpandableFunction {
             }
             return sin.calculate(correctedX, precision)
                     .add(csc.calculate(correctedX, precision))
-                    .setScale(precision.scale(), HALF_EVEN);
+                    .setScale(precision.scale(), HALF_UP);
 
         } else {
             return log5.calculate(correctedX, precision).pow(3)
@@ -48,7 +50,7 @@ public class FunctionsSystem implements SeriesExpandableFunction {
                     .add(log3.calculate(correctedX, precision)
                             .multiply(log5.calculate(correctedX, precision)))
                     .subtract(ln.calculate(correctedX, precision)).pow(3)
-                    .setScale(precision.scale(), HALF_EVEN);
+                    .setScale(precision.scale(), HALF_UP);
         }
     }
 }

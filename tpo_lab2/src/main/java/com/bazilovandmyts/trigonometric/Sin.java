@@ -37,7 +37,7 @@ public class Sin extends LimitedIterationsExpandableFunction {
             prev = sum;
             sum = sum.add(minusOnePow(i).multiply(prod(X, 2 * i + 1)));
             i++;
-        } while (new BigDecimal("0.1").pow(precision.scale()).compareTo(prev.subtract(sum).abs()) < 0);
+        } while (i < maxIterations && new BigDecimal("0.1").pow(precision.scale()).compareTo(prev.subtract(sum).abs()) < 0);
 
         return sum.setScale(precision.scale(), HALF_EVEN);
     }

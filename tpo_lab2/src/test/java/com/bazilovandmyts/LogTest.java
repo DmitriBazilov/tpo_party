@@ -1,4 +1,4 @@
-package com.krivonosovandmarkov;
+package com.bazilovandmyts;
 
 import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
@@ -9,8 +9,8 @@ import static org.mockito.Mockito.*;
 
 import java.math.BigDecimal;
 
-import com.krivonosovandmarkov.logariphmic.Ln;
-import com.krivonosovandmarkov.logariphmic.Log;
+import com.bazilovandmyts.logariphmic.Ln;
+import com.bazilovandmyts.logariphmic.Log;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;

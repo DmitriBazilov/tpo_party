@@ -1,6 +1,6 @@
 package com.bazilovandmyts.trigonometric;
 
-import com.bazilovandmyts.function.LimitedIterationsExpandableFunction;
+import com.bazilovandmyts.function.LimitedIterationsFunction;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -10,7 +10,7 @@ import static java.lang.String.format;
 import static java.math.BigDecimal.ZERO;
 import static java.math.BigDecimal.ONE;
 
-public class Csc extends LimitedIterationsExpandableFunction {
+public class Csc extends LimitedIterationsFunction {
 
     private final Sin sin;
 

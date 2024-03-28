@@ -1,6 +1,6 @@
 package com.bazilovandmyts;
 
-import com.bazilovandmyts.function.SeriesExpandableFunction;
+import com.bazilovandmyts.function.Function;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class CsvWriter {
 
   public static void write(
       final String filename,
-      final SeriesExpandableFunction function,
+      final Function function,
       final BigDecimal from,
       final BigDecimal to,
       final BigDecimal step,

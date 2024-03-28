@@ -1,4 +1,4 @@
-package com.krivonosovandmarkov;
+package com.bazilovandmyts;
 
 import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
@@ -10,7 +10,7 @@ import ch.obermuhlner.math.big.BigDecimalMath;
 import java.math.BigDecimal;
 import java.math.MathContext;
 
-import com.krivonosovandmarkov.trigonometric.Sin;
+import com.bazilovandmyts.trigonometric.Sin;
 import org.junit.jupiter.api.Test;
 
 class SinTest {

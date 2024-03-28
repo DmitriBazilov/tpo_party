@@ -1,6 +1,6 @@
-package com.krivonosovandmarkov;
+package com.bazilovandmyts;
 
-import com.krivonosovandmarkov.function.SeriesExpandableFunction;
+import com.bazilovandmyts.function.SeriesExpandableFunction;
 
 import java.io.File;
 import java.io.IOException;

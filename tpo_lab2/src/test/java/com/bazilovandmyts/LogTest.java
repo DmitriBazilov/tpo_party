@@ -1,4 +1,4 @@
-package com.krivonosovandmarkov;
+package com.bazilovandmyts;
 
 import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
@@ -9,8 +9,8 @@ import static org.mockito.Mockito.*;
 
 import java.math.BigDecimal;
 
-import com.krivonosovandmarkov.logariphmic.Ln;
-import com.krivonosovandmarkov.logariphmic.Log;
+import com.bazilovandmyts.logariphmic.Ln;
+import com.bazilovandmyts.logariphmic.Log;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -63,7 +63,7 @@ class LogTest {
   @Test
   void shouldCalculateForPositive() {
     final Log log = new Log(5);
-    final BigDecimal expected = new BigDecimal("2.4663");
-    assertEquals(expected, log.calculate(new BigDecimal(53), DEFAULT_PRECISION));
+    final BigDecimal expected = new BigDecimal("1.9483");
+    assertEquals(expected, log.calculate(new BigDecimal(23), DEFAULT_PRECISION));
   }
 }

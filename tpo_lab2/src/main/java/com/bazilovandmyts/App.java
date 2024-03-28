@@ -1,44 +1,36 @@
-package com.krivonosovandmarkov;
+package com.bazilovandmyts;
 
-import com.krivonosovandmarkov.function.FunctionsSystem;
-import com.krivonosovandmarkov.logariphmic.Ln;
-import com.krivonosovandmarkov.logariphmic.Log;
-import com.krivonosovandmarkov.trigonometric.Cos;
-import com.krivonosovandmarkov.trigonometric.Sin;
-import com.krivonosovandmarkov.trigonometric.Tan;
+import com.bazilovandmyts.function.FunctionsSystem;
+import com.bazilovandmyts.logariphmic.Ln;
+import com.bazilovandmyts.logariphmic.Log;
+import com.bazilovandmyts.trigonometric.Csc;
+import com.bazilovandmyts.trigonometric.Sin;
 
+import java.io.DataOutput;
 import java.io.IOException;
 import java.math.BigDecimal;
 
 public class App {
 
     public static void main(String[] args) throws IOException {
-        final Cos cos = new Cos();
-        CsvWriter.write(
-                "csv/cos.csv",
-                cos,
-                new BigDecimal(-1),
-                new BigDecimal(1),
-                new BigDecimal("0.1"),
-                new BigDecimal("0.0000000001"));
-
         final Sin sin = new Sin();
         CsvWriter.write(
                 "csv/sin.csv",
                 sin,
-                new BigDecimal(-1),
-                new BigDecimal(1),
-                new BigDecimal("0.1"),
+                BigDecimal.valueOf(-1.1),
+                new BigDecimal("1.1"),
+                new BigDecimal("0.2"),
                 new BigDecimal("0.0000000001"));
 
-        final Tan tan = new Tan();
+        final Csc csc = new Csc(sin);
         CsvWriter.write(
-                "csv/tan.csv",
-                tan,
-                new BigDecimal(-1),
-                new BigDecimal(1),
-                new BigDecimal("0.1"),
-                new BigDecimal("0.0000000001"));
+                "csv/csc.csv",
+                csc,
+                BigDecimal.valueOf(-1.1),
+                BigDecimal.valueOf(1.1),
+                new BigDecimal("0.2"),
+                new BigDecimal("0.0000000001")
+        );
 
         final Ln ln = new Ln();
         CsvWriter.write(
@@ -66,16 +58,6 @@ public class App {
                 new BigDecimal(20),
                 new BigDecimal("0.1"),
                 new BigDecimal("0.00000000001"));
-
-        final Log log10 = new Log(10);
-        CsvWriter.write(
-                "csv/log10.csv",
-                log10,
-                new BigDecimal(1),
-                new BigDecimal(20),
-                new BigDecimal("0.1"),
-                new BigDecimal("0.00000000001"));
-
         final FunctionsSystem func = new FunctionsSystem();
         CsvWriter.write(
                 "csv/func.csv",
@@ -83,6 +65,7 @@ public class App {
                 new BigDecimal(-2),
                 new BigDecimal(2),
                 new BigDecimal("0.1"),
-                new BigDecimal("0.00000000001"));
+                new BigDecimal("0.00000000001")
+        );
     }
 }

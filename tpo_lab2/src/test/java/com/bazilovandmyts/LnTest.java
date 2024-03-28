@@ -1,4 +1,4 @@
-package com.krivonosovandmarkov;
+package com.bazilovandmyts;
 
 import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.math.BigDecimal;
 
-import com.krivonosovandmarkov.logariphmic.Ln;
+import com.bazilovandmyts.logariphmic.Ln;
 import org.junit.jupiter.api.Test;
 
 class LnTest {

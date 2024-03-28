@@ -1,6 +1,6 @@
-package com.krivonosovandmarkov.trigonometric;
+package com.bazilovandmyts.trigonometric;
 
-import com.krivonosovandmarkov.function.LimitedIterationsExpandableFunction;
+import com.bazilovandmyts.function.LimitedIterationsExpandableFunction;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

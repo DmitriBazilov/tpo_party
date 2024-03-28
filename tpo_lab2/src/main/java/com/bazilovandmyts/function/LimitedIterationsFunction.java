@@ -6,13 +6,13 @@ import static java.math.BigDecimal.ZERO;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public abstract class LimitedIterationsExpandableFunction implements SeriesExpandableFunction {
+public abstract class LimitedIterationsFunction implements Function {
 
     private static final int DEFAULT_MAX_ITERATIONS = 10000;
 
     protected final int maxIterations;
 
-    protected LimitedIterationsExpandableFunction() {
+    protected LimitedIterationsFunction() {
         this.maxIterations = DEFAULT_MAX_ITERATIONS;
     }
 

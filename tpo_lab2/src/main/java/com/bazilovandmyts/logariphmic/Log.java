@@ -1,6 +1,6 @@
 package com.bazilovandmyts.logariphmic;
 
-import com.bazilovandmyts.function.LimitedIterationsExpandableFunction;
+import com.bazilovandmyts.function.LimitedIterationsFunction;
 
 import static java.lang.String.format;
 import static java.math.BigDecimal.ZERO;
@@ -9,7 +9,7 @@ import static java.math.RoundingMode.HALF_EVEN;
 
 import java.math.BigDecimal;
 
-public class Log extends LimitedIterationsExpandableFunction {
+public class Log extends LimitedIterationsFunction {
 
     private final Ln ln;
     private final int base;

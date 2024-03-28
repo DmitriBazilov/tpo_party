@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.math.BigDecimal;
 import java.util.stream.Stream;
 
-import com.bazilovandmyts.function.SeriesExpandableFunction;
+import com.bazilovandmyts.function.Function;
 import com.bazilovandmyts.logariphmic.Ln;
 import com.bazilovandmyts.logariphmic.Log;
 import com.bazilovandmyts.trigonometric.Sin;
@@ -14,19 +14,19 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class SeriesExpandableFunctionTest {
+class FunctionTest {
 
   private static final BigDecimal DEFAULT_PRECISION = new BigDecimal("0.000001");
 
   @ParameterizedTest
   @MethodSource("functions")
-  void shouldNotAcceptNullArgument(final SeriesExpandableFunction function) {
+  void shouldNotAcceptNullArgument(final Function function) {
     assertThrows(NullPointerException.class, () -> function.calculate(null, DEFAULT_PRECISION));
   }
 
   @ParameterizedTest
   @MethodSource("functions")
-  void shouldNotAcceptNullPrecision(final SeriesExpandableFunction function) {
+  void shouldNotAcceptNullPrecision(final Function function) {
     assertThrows(NullPointerException.class, () -> function.calculate(ONE, null));
   }
 

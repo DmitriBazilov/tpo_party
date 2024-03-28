@@ -3,11 +3,11 @@ package com.bazilovandmyts.trigonometric;
 import static java.math.BigDecimal.valueOf;
 import static java.math.RoundingMode.HALF_EVEN;
 
-import com.bazilovandmyts.function.LimitedIterationsExpandableFunction;
+import com.bazilovandmyts.function.LimitedIterationsFunction;
 
 import java.math.BigDecimal;
 
-public class Sin extends LimitedIterationsExpandableFunction {
+public class Sin extends LimitedIterationsFunction {
 
     public Sin() {
         super();

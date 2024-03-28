@@ -2,7 +2,6 @@ package com.bazilovandmyts.function;
 
 import static java.math.BigDecimal.ZERO;
 import static java.math.MathContext.DECIMAL128;
-import static java.math.RoundingMode.HALF_EVEN;
 import static java.math.RoundingMode.HALF_UP;
 
 import ch.obermuhlner.math.big.BigDecimalMath;
@@ -16,7 +15,7 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 
 @AllArgsConstructor
-public class FunctionsSystem implements SeriesExpandableFunction {
+public class FunctionsSystem implements Function {
 
     private final Sin sin;
     private final Csc csc;

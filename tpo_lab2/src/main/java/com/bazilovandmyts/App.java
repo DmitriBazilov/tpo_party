@@ -17,17 +17,17 @@ public class App {
         CsvWriter.write(
                 "csv/sin.csv",
                 sin,
-                BigDecimal.valueOf(-1.1),
-                new BigDecimal("1.1"),
-                new BigDecimal("0.2"),
+                BigDecimal.valueOf(-5),
+                new BigDecimal("5"),
+                new BigDecimal("0.1"),
                 new BigDecimal("0.0000000001"));
 
         final Csc csc = new Csc(sin);
         CsvWriter.write(
                 "csv/csc.csv",
                 csc,
-                BigDecimal.valueOf(-1.1),
-                BigDecimal.valueOf(1.1),
+                BigDecimal.valueOf(-5.1),
+                BigDecimal.valueOf(5.1),
                 new BigDecimal("0.2"),
                 new BigDecimal("0.0000000001")
         );
@@ -62,8 +62,8 @@ public class App {
         CsvWriter.write(
                 "csv/func.csv",
                 func,
-                new BigDecimal(-2),
-                new BigDecimal(2),
+                new BigDecimal(-5),
+                new BigDecimal(5),
                 new BigDecimal("0.1"),
                 new BigDecimal("0.00000000001")
         );

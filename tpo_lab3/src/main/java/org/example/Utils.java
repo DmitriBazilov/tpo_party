@@ -25,19 +25,12 @@ public class Utils {
     public static final String FIREFOX_SYSTEM_PROPERTY_NAME = "webdriver.gecko.driver";
     public static final String FIREFOX_SYSTEM_PROPERTY_PATH = dotenv.get("FIREFOX_SYSTEM_PROPERTY_PATH");
     public static final String BASE_URL = "https://www.mamba.ru/ru";
-    public static final String FIRST_USER_URL = "https://mirtesen.ru/people/914760988";
-    public static final String SECOND_USER_URL = "https://mirtesen.ru/people/68403438";
-
-    public static final String CORRECT_FIRST_USER_LOGIN = dotenv.get("DANS_LOGIN");
-    public static final String CORRECT_FIRST_USER_PASSWORD = dotenv.get("DANS_PASSWORD");
-    public static final String CORRECT_SECOND_USER_LOGIN = dotenv.get("MAXES_LOGIN");
-    public static final String CORRECT_SECOND_USER_PASSWORD = dotenv.get("MAXES_PASSWORD");
-    public static final String WRONG_FIRST_USER_PASSWORD = "wrong_password";
+    public static final String RATING_PAGE = "https://www.mamba.ru/rating";
 
     public static WebDriver getDriver() {
         WebDriver driver;
         try {
-            List<String> properties = Files.readAllLines(Paths.get("mirtesen.properties"));
+            List<String> properties = Files.readAllLines(Paths.get("mamba.properties"));
             for (String property : properties) {
                 if (property.startsWith("WEB_DRIVER")) {
                     switch (property.toLowerCase().split("=")[1]) {
@@ -76,10 +69,5 @@ public class Utils {
     public static WebElement getElementBySelector(WebDriver driver, By selector) {
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return driverWait.until(ExpectedConditions.visibilityOfElementLocated(selector));
-    }
-
-    public static void waitUntilPageLoads(WebDriver driver, long timeout) {
-        WebDriverWait waitDriver = new WebDriverWait(driver, Duration.ofSeconds(timeout));
-        waitDriver.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 }

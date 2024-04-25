@@ -2,8 +2,8 @@ package org.example.uc;
 
 import lombok.SneakyThrows;
 import org.example.Utils;
-import org.example.pages.MainPage;
 import org.example.pages.RatingPage;
+import org.example.pages.StartPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,9 +21,9 @@ public class RatingTest {
     @Test
     void likeTest() {
         WebDriver webDriver = Utils.getDriver();
-        MainPage mainPage = new MainPage(webDriver);
+        StartPage mainPage = new StartPage(webDriver);
         webDriver.get(Utils.BASE_URL);
-        mainPage.doSecondUserLogin();
+        mainPage.doLogin();
 
         RatingPage ratingPage = new RatingPage(webDriver);
         webDriver.get(Utils.RATING_PAGE);
@@ -42,9 +42,9 @@ public class RatingTest {
     @Test
     void skipTest() {
         WebDriver webDriver = Utils.getDriver();
-        MainPage mainPage = new MainPage(webDriver);
+        StartPage startPage = new StartPage(webDriver);
         webDriver.get(Utils.BASE_URL);
-        mainPage.doSecondUserLogin();
+        startPage.doLogin();
 
         RatingPage ratingPage = new RatingPage(webDriver);
         webDriver.get(Utils.RATING_PAGE);

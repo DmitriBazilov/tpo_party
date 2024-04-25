@@ -21,9 +21,9 @@ public class RatingTest {
     @Test
     void likeTest() {
         WebDriver webDriver = Utils.getDriver();
-        StartPage mainPage = new StartPage(webDriver);
+        StartPage startPage = new StartPage(webDriver);
         webDriver.get(Utils.BASE_URL);
-        mainPage.doLogin();
+        startPage.doLogin();
 
         RatingPage ratingPage = new RatingPage(webDriver);
         webDriver.get(Utils.RATING_PAGE);

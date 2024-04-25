@@ -1,7 +1,7 @@
 package org.example.uc;
 
 import org.example.Utils;
-import org.example.pages.MainPage;
+import org.example.pages.StartPage;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,31 +17,35 @@ public class AuthTest {
         Utils.prepareDrivers();
     }
 
+    @Test
+    void loginTest() {
+        WebDriver webDriver = Utils.getDriver();
+
+        StartPage startPage = new StartPage(webDriver);
+        webDriver.get(Utils.BASE_URL);
+        startPage.doLogin();
+
+        WebElement verification = Utils.getElementBySelector(webDriver, By.xpath("//*[@id=\"app-wrapper\"]/div[3]/div/div[2]"));
+
+        assertNotNull(verification);
+
+        webDriver.quit();
+
+    }
+
 
     @Test
     void logoutTest() {
         WebDriver webDriver = Utils.getDriver();
 
-        MainPage mainPage = new MainPage(webDriver);
+        StartPage startPage = new StartPage(webDriver);
         webDriver.get(Utils.BASE_URL);
-        mainPage.doRegister();
-        mainPage.doLogout();
-        WebElement authButton = Utils.getElementBySelector(webDriver, By.xpath("/html/body/div[1]/div/div[1]/div[1]/header/div/div/div/div/div[4]/ul/li[2]/button"));
-        assertNotNull(authButton);
+        startPage.doLogin();
+        startPage.doLogout();
+        WebElement loginButton = Utils.getElementBySelector(webDriver, By.xpath("//*[@id=\"app-wrapper\"]/div[1]/header/div[6]/a[1]"));
+        assertNotNull(loginButton);
 
         webDriver.quit();
     }
 
-    @Test
-    void wrongLoginTest() {
-        WebDriver webDriver = Utils.getDriver();
-
-        MainPage mainPage = new MainPage(webDriver);
-        webDriver.get(Utils.BASE_URL);
-        mainPage.doWrongLogin();
-        WebElement loginError = Utils.getElementBySelector(webDriver, By.xpath("/html/body/div[3]/div/div/div/div/div/form/div[2]/div/div[1]"));
-        assertNotNull(loginError);
-
-        webDriver.quit();
-    }
 }

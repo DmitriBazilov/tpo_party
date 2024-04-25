@@ -18,7 +18,6 @@ import java.util.List;
 
 public class Utils {
 
-    public static final String RATING_PAGE = "https://www.mamba.ru/rating";
     static Dotenv dotenv = Dotenv.configure().load();
 
     public static final String CHROME_SYSTEM_PROPERTY_NAME = "webdriver.chrome.driver";
@@ -29,10 +28,10 @@ public class Utils {
     public static final String FIRST_USER_URL = "https://mirtesen.ru/people/914760988";
     public static final String SECOND_USER_URL = "https://mirtesen.ru/people/68403438";
 
-    public static final String CORRECT_FIRST_USER_LOGIN = dotenv.get("DMITRI_LOGIN");
-    public static final String CORRECT_FIRST_USER_PASSWORD = dotenv.get("DMITRI_PASSWORD");
-    public static final String CORRECT_SECOND_USER_LOGIN = dotenv.get("DMITRI_LOGIN");
-    public static final String CORRECT_SECOND_USER_PASSWORD = dotenv.get("DMITRI_PASSWORD");
+    public static final String CORRECT_FIRST_USER_LOGIN = dotenv.get("DANS_LOGIN");
+    public static final String CORRECT_FIRST_USER_PASSWORD = dotenv.get("DANS_PASSWORD");
+    public static final String CORRECT_SECOND_USER_LOGIN = dotenv.get("MAXES_LOGIN");
+    public static final String CORRECT_SECOND_USER_PASSWORD = dotenv.get("MAXES_PASSWORD");
     public static final String WRONG_FIRST_USER_PASSWORD = "wrong_password";
 
     public static WebDriver getDriver() {

@@ -26,6 +26,7 @@ public class Utils {
     public static final String FIREFOX_SYSTEM_PROPERTY_PATH = dotenv.get("FIREFOX_SYSTEM_PROPERTY_PATH");
     public static final String BASE_URL = "https://www.mamba.ru/ru";
     public static final String RATING_PAGE = "https://www.mamba.ru/rating";
+    public static final String SEARCH_PAGE = "https://www.mamba.ru/search";
 
     public static WebDriver getDriver() {
         WebDriver driver;

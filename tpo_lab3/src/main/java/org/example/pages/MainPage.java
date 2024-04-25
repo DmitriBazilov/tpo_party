@@ -98,6 +98,15 @@ public class MainPage extends Page {
     }
 
     private void tryLogin(CharSequence login, CharSequence password) {
+        Utils.getElementBySelector(driver, By.xpath("//*[@id=\"VideoBackgroundModalLayout\"]/div[2]/div[1]/header/div/a")).click();
+        Utils.getElementBySelector(driver, By.xpath("//*[@id=\"VideoBackgroundModalLayout\"]/div[4]/div/div/div/div/a[1]")).click();
+        Utils.getElementBySelector(driver, By.xpath("//*[@id=\"VideoBackgroundModalLayout\"]/div[4]/div/div/div/main/form/div[1]/div/input"))
+                .sendKeys(login);
+
+        Utils.getElementBySelector(driver, By.xpath("//*[@id=\"VideoBackgroundModalLayout\"]/div[4]/div/div/div/main/form/div[2]/div/div/input"))
+                .sendKeys(password);
+
+        Utils.getElementBySelector(driver, By.xpath("//*[@id=\"VideoBackgroundModalLayout\"]/div[4]/div/div/div/main/form/div[4]/input")).click();
 //        WebElement loginButton = Utils.getElementBySelector(driver, By.xpath("//*[@id=\"header\"]/div/div/div/div/div[4]/ul/li[2]/button"));
 //        loginButton.click();
 //        WebElement loginByEmailButton = Utils.getElementBySelector(driver, By.xpath("/html/body/div[3]/div/div/div/div/div/form/div[6]/button"));
